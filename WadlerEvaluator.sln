@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WadlerEvaluatorLib", "Wadle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WadlerEvaluatorApp", "WadlerEvaluatorApp\WadlerEvaluatorApp.csproj", "{6A2D0427-AD7B-4BB4-9229-477AB92058C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonadicEvaluatorApp", "MonadicEvaluatorApp\MonadicEvaluatorApp.csproj", "{8FB340E7-3756-4931-8318-21585542F75B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonadicEvaluatorLib", "MonadicEvaluatorLib\MonadicEvaluatorLib.csproj", "{D33DC6AB-2437-4940-9EA6-DB9A7523ECA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{6A2D0427-AD7B-4BB4-9229-477AB92058C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A2D0427-AD7B-4BB4-9229-477AB92058C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A2D0427-AD7B-4BB4-9229-477AB92058C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB340E7-3756-4931-8318-21585542F75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB340E7-3756-4931-8318-21585542F75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB340E7-3756-4931-8318-21585542F75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB340E7-3756-4931-8318-21585542F75B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D33DC6AB-2437-4940-9EA6-DB9A7523ECA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33DC6AB-2437-4940-9EA6-DB9A7523ECA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33DC6AB-2437-4940-9EA6-DB9A7523ECA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33DC6AB-2437-4940-9EA6-DB9A7523ECA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
