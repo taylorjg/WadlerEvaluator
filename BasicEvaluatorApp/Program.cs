@@ -1,7 +1,7 @@
 ﻿using System;
-using WadlerEvaluatorLib;
+using BasicEvaluatorLib;
 
-namespace WadlerEvaluatorApp
+namespace BasicEvaluatorApp
 {
     internal class Program
     {

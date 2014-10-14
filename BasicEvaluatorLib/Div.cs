@@ -1,4 +1,4 @@
-﻿namespace WadlerEvaluatorLib
+﻿namespace BasicEvaluatorLib
 {
     public class Div : Term
     {

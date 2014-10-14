@@ -8,13 +8,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CEE864
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WadlerEvaluatorLib", "WadlerEvaluatorLib\WadlerEvaluatorLib.csproj", "{CA13F8AD-1B1E-49B7-8E17-D11183B22EC7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WadlerEvaluatorApp", "WadlerEvaluatorApp\WadlerEvaluatorApp.csproj", "{6A2D0427-AD7B-4BB4-9229-477AB92058C6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonadicEvaluatorApp", "MonadicEvaluatorApp\MonadicEvaluatorApp.csproj", "{8FB340E7-3756-4931-8318-21585542F75B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonadicEvaluatorLib", "MonadicEvaluatorLib\MonadicEvaluatorLib.csproj", "{D33DC6AB-2437-4940-9EA6-DB9A7523ECA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicEvaluatorLib", "BasicEvaluatorLib\BasicEvaluatorLib.csproj", "{CD153003-7156-4A55-9A1B-1EFD2CB6080A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicEvaluatorApp", "BasicEvaluatorApp\BasicEvaluatorApp.csproj", "{5232C792-A289-4EDC-ABA7-3731D34537A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,14 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CA13F8AD-1B1E-49B7-8E17-D11183B22EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA13F8AD-1B1E-49B7-8E17-D11183B22EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA13F8AD-1B1E-49B7-8E17-D11183B22EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA13F8AD-1B1E-49B7-8E17-D11183B22EC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A2D0427-AD7B-4BB4-9229-477AB92058C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A2D0427-AD7B-4BB4-9229-477AB92058C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A2D0427-AD7B-4BB4-9229-477AB92058C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A2D0427-AD7B-4BB4-9229-477AB92058C6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8FB340E7-3756-4931-8318-21585542F75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FB340E7-3756-4931-8318-21585542F75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FB340E7-3756-4931-8318-21585542F75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,6 +30,14 @@ Global
 		{D33DC6AB-2437-4940-9EA6-DB9A7523ECA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D33DC6AB-2437-4940-9EA6-DB9A7523ECA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D33DC6AB-2437-4940-9EA6-DB9A7523ECA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD153003-7156-4A55-9A1B-1EFD2CB6080A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD153003-7156-4A55-9A1B-1EFD2CB6080A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD153003-7156-4A55-9A1B-1EFD2CB6080A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD153003-7156-4A55-9A1B-1EFD2CB6080A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5232C792-A289-4EDC-ABA7-3731D34537A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5232C792-A289-4EDC-ABA7-3731D34537A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5232C792-A289-4EDC-ABA7-3731D34537A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5232C792-A289-4EDC-ABA7-3731D34537A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

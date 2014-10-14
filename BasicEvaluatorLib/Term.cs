@@ -1,4 +1,4 @@
-﻿namespace WadlerEvaluatorLib
+﻿namespace BasicEvaluatorLib
 {
     public abstract class Term
     {

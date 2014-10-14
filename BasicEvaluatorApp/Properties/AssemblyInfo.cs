@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WadlerEvaluatorLib")]
+[assembly: AssemblyTitle("BasicEvaluatorApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("WadlerEvaluatorLib")]
+[assembly: AssemblyProduct("BasicEvaluatorApp")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c3233497-458c-4ad5-8e8a-9609ffc6487d")]
+[assembly: Guid("a99092bc-e498-4777-a947-31da85995ced")]
 
 // Version information for an assembly consists of the following four values:
 //
