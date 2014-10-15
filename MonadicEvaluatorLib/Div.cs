@@ -1,4 +1,5 @@
-﻿using MonadLib;
+﻿using System;
+using MonadLib;
 
 namespace MonadicEvaluatorLib
 {
@@ -22,9 +23,20 @@ namespace MonadicEvaluatorLib
 
         public override Either<string, int> EvalEither()
         {
+            Func<string, Either<string, int>> raise = Either<string>.Left<int>;
+
             return _term1.EvalEither().Bind(
                 a => _term2.EvalEither().Bind(
-                    b => b == 0 ? Either<string>.Left<int>("divide by zero") : Either<string>.Right(a / b)));
+                    b => b == 0 ? raise("divide by zero") : Either<string>.Right(a / b)));
+        }
+
+        public override State<int, int> EvalState()
+        {
+            Func<State<int, Unit>> tick = () => State<int>.Modify(x => x + 1);
+
+            return _term1.EvalState().Bind(
+                a => _term2.EvalState().Bind(
+                    b => tick().BindIgnoringLeft(State<int>.Return(a / b))));
         }
     }
 }

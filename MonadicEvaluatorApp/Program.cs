@@ -11,20 +11,27 @@ namespace MonadicEvaluatorApp
             var answer = new Div(new Div(new Constant(1972), new Constant(2)), new Constant(23));
             var error = new Div(new Constant(1), new Constant(0));
 
-            DemoEvalMaybe(answer, error);
-            DemoEvalEither(answer, error);
+            EvalMaybeDemo(answer, error);
+            EvalEitherDemo(answer, error);
+            EvalStateDemo(answer, error);
         }
 
-        private static void DemoEvalMaybe(Term answer, Term error)
+        private static void EvalMaybeDemo(Term answer, Term error)
         {
             DisplayResult(answer.EvalMaybe(), "answer.EvalMaybe()");
             DisplayResult(error.EvalMaybe(), "error.EvalMaybe()");
         }
 
-        private static void DemoEvalEither(Term answer, Term error)
+        private static void EvalEitherDemo(Term answer, Term error)
         {
             DisplayResult(answer.EvalEither(), "answer.EvalEither()");
             DisplayResult(error.EvalEither(), "error.EvalEither()");
+        }
+
+        private static void EvalStateDemo(Term answer, Term error)
+        {
+            DisplayResult(answer.EvalState().RunState(0), "answer.EvalState()");
+            DisplayResult(error.EvalState().RunState(0), "error.EvalState()");
         }
 
         private static void DisplayResult(Maybe<int> result, string label)
@@ -35,6 +42,11 @@ namespace MonadicEvaluatorApp
         private static void DisplayResult(Either<string, int> result, string label)
         {
             Console.WriteLine("{0}: {1}", label, result.Match(l => l, Convert.ToString));
+        }
+
+        private static void DisplayResult(Tuple<int, int> result, string label)
+        {
+            Console.WriteLine("{0}: {1}", label, result);
         }
     }
 }

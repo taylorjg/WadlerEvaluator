@@ -6,5 +6,6 @@ namespace MonadicEvaluatorLib
     {
         public abstract Maybe<int> EvalMaybe();
         public abstract Either<string, int> EvalEither();
+        public abstract State<int, int> EvalState();
     }
 }
