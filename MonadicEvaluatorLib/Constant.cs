@@ -11,9 +11,14 @@ namespace MonadicEvaluatorLib
             _value = value;
         }
 
-        public override IMonad<int> Eval(MonadAdapter monadAdapter)
+        public override Maybe<int> EvalMaybe()
         {
-            return monadAdapter.Return(_value);
+            return Maybe.Just(_value);
+        }
+
+        public override Either<string, int> EvalEither()
+        {
+            return Either<string>.Right(_value);
         }
     }
 }

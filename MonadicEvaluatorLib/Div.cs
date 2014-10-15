@@ -13,11 +13,18 @@ namespace MonadicEvaluatorLib
             _term2 = term2;
         }
 
-        public override IMonad<int> Eval(MonadAdapter monadAdapter)
+        public override Maybe<int> EvalMaybe()
         {
-            return monadAdapter.Bind(
-                _term1.Eval(monadAdapter), a => monadAdapter.Bind(
-                    _term2.Eval(monadAdapter), b => monadAdapter.Return(a / b)));
+            return _term1.EvalMaybe().Bind(
+                a => _term2.EvalMaybe().Bind(
+                    b => b == 0 ? Maybe.Nothing<int>() : Maybe.Just(a / b)));
+        }
+
+        public override Either<string, int> EvalEither()
+        {
+            return _term1.EvalEither().Bind(
+                a => _term2.EvalEither().Bind(
+                    b => b == 0 ? Either<string>.Left<int>("divide by zero") : Either<string>.Right(a / b)));
         }
     }
 }

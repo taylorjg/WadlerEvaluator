@@ -4,6 +4,7 @@ namespace MonadicEvaluatorLib
 {
     public abstract class Term
     {
-        public abstract IMonad<int> Eval(MonadAdapter monadAdapter);
+        public abstract Maybe<int> EvalMaybe();
+        public abstract Either<string, int> EvalEither();
     }
 }
