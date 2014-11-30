@@ -34,61 +34,56 @@ namespace MonadicEvaluatorApp
 
         private static void EvalMaybeDemo(Term t, string label)
         {
-            Console.Write("{0}: ", label);
-            DisplayResult(t.EvalMaybe());
+            TryEval(() => DisplayMaybeResult(t.EvalMaybe()), label);
         }
 
         private static void EvalEitherDemo(Term t, string label)
         {
-            Console.Write("{0}: ", label);
-            DisplayResult(t.EvalEither());
+            TryEval(() => DisplayEitherResult(t.EvalEither()), label);
         }
 
         private static void EvalStateDemo(Term t, string label)
         {
-            try
-            {
-                Console.Write("{0}: ", label);
-                DisplayResult(t.EvalState().RunState(0));
-            }
-            catch (Exception ex)
-            {
-                Console.Error.WriteLine("EXCEPTION: {0}", ex.Message);
-            }
+            TryEval(() => DisplayStateResult(t.EvalState().RunState(0)), label);
         }
 
         private static void EvalWriterDemo(Term t, string label)
         {
+            TryEval(() => DisplayWriterResult(t.EvalWriter().RunWriter), label);
+        }
+
+        private static void DisplayMaybeResult(Maybe<int> result)
+        {
+            Console.WriteLine(result.Match(Convert.ToString, () => "Nothing"));
+        }
+
+        private static void DisplayEitherResult(Either<string, int> result)
+        {
+            Console.WriteLine(result.Match(l => l, Convert.ToString));
+        }
+
+        private static void DisplayStateResult(Tuple<int, int> result)
+        {
+            Console.WriteLine(result);
+        }
+
+        private static void DisplayWriterResult(Tuple<int, ListMonoid<string>> result)
+        {
+            Console.WriteLine(result.Item1);
+            foreach (var w in result.Item2.List) Console.WriteLine("  {0}", w);
+        }
+
+        private static void TryEval(Action action, string label)
+        {
             try
             {
                 Console.Write("{0}: ", label);
-                DisplayResult(t.EvalWriter().RunWriter);
+                action();
             }
             catch (Exception ex)
             {
                 Console.Error.WriteLine("EXCEPTION: {0}", ex.Message);
             }
-        }
-
-        private static void DisplayResult(Maybe<int> result)
-        {
-            Console.WriteLine(result.Match(Convert.ToString, () => "Nothing"));
-        }
-
-        private static void DisplayResult(Either<string, int> result)
-        {
-            Console.WriteLine(result.Match(l => l, Convert.ToString));
-        }
-
-        private static void DisplayResult(Tuple<int, int> result)
-        {
-            Console.WriteLine(result);
-        }
-
-        private static void DisplayResult(Tuple<int, ListMonoid<string>> result)
-        {
-            Console.WriteLine(result.Item1);
-            foreach (var w in result.Item2.List) Console.WriteLine("  {0}", w);
         }
     }
 }

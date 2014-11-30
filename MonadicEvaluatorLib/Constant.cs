@@ -38,8 +38,9 @@ namespace MonadicEvaluatorLib
 
         public override Writer<ListMonoid<string>, string, int> EvalWriter()
         {
-            return Writer<ListMonoid<string>, string>.Tell(new ListMonoid<string>(Line(this, _value))).BindIgnoringLeft(
-                Writer<ListMonoid<string>, string>.Return(_value));
+            return Writer<ListMonoid<string>, string>
+                .Tell(new ListMonoid<string>(Line(this, _value)))
+                .BindIgnoringLeft(Writer<ListMonoid<string>, string>.Return(_value));
         }
     }
 }
