@@ -14,6 +14,16 @@ namespace MonadicEvaluatorLib
             _term2 = term2;
         }
 
+        public override string Name
+        {
+            get { return "Div"; }
+        }
+
+        public override string ShowTerm()
+        {
+            return string.Format("{0} ({1}) ({2})", Name, _term1.ShowTerm(), _term2.ShowTerm());
+        }
+
         public override Maybe<int> EvalMaybe()
         {
             return _term1.EvalMaybe().Bind(
@@ -37,6 +47,15 @@ namespace MonadicEvaluatorLib
             return _term1.EvalState().Bind(
                 a => _term2.EvalState().Bind(
                     b => tick().BindIgnoringLeft(State<int>.Return(a / b))));
+        }
+
+        public override Writer<ListMonoid<string>, string, int> EvalWriter()
+        {
+            return _term1.EvalWriter().Bind(
+                a => _term2.EvalWriter().Bind(
+                    b => Writer<ListMonoid<string>, string>
+                             .Tell(new ListMonoid<string>(Line(this, a / b)))
+                             .BindIgnoringLeft(Writer<ListMonoid<string>, string>.Return(a / b))));
         }
     }
 }
